@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class User : BaseEntity
+    public class UserDTO
     {
-        public int Id { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
@@ -16,10 +15,5 @@ namespace Models
         public string Surname { get; set; }
         public string AvatarUrl { get; set; }
         public int[] AccountTypeId { get; set; }
-
-
-        public virtual ICollection<AccountType> AccountTypes { get; set; }
-        public virtual ICollection<Progress> Progresses { get; set; }
-
     }
 }

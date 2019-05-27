@@ -35,6 +35,15 @@ namespace SayIT.controllers
         [EnableQuery]
         public IQueryable<Translation> GetTranslations()
         {
+            
+
+            var acc = new AccountType()
+            {
+                Type = "Admin"
+            };
+
+            db.AccountTypes.Add(acc);
+            db.SaveChanges();
             return db.Translations;
         }
 
