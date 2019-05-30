@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Category : BaseEntity
+    public class Category
     {
         public int Id { get; set; }
         public string CategoryName { get; set; }
-        public string IconUrl { get; set; }
+        public string MaterialIconName { get; set; }
 
-        public virtual ICollection<Translation> Translations { get; set; }
-        public virtual ICollection<Progress> Progresses { get; set; }
+        public  ICollection<Translation> Translations { get; set; }
     }
 }

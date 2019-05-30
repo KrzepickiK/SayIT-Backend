@@ -41,17 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountType.cs" />
-    <Compile Include="BaseEntity.cs" />
     <Compile Include="Category.cs" />
-    <Compile Include="DTOs\QuizQuestionDTO.cs" />
     <Compile Include="LearningType.cs" />
-    <Compile Include="Progress.cs" />
     <Compile Include="QuizQuestion.cs" />
-    <Compile Include="QuizQuestionType.cs" />
     <Compile Include="Translation.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="DTOs\TranslationDTO.cs" />
-    <Compile Include="DTOs\UserDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">

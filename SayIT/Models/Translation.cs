@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Translation :BaseEntity
+    public class Translation
     {
         public int Id { get; set; }
         public string TranslationEN { get; set; }
@@ -15,7 +15,7 @@ namespace Models
         public string MeaningEN { get; set; }
         public int CategoryId { get; set; }
 
-        public virtual Category Category { get; set; }
-        public virtual ICollection<QuizQuestion> QuizQuestion { get; set; }
+        public Category Category { get; set; }
+        public ICollection<QuizQuestion> QuizQuestion { get; set; }
     }
 }

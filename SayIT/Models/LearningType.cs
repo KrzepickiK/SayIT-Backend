@@ -10,8 +10,9 @@ namespace Models
     public class LearningType
     {
         public int Id { get; set; }
-        public string Type { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
 
-        public virtual ICollection<Progress> Progresses { get; set; }
+        public ICollection<QuizQuestion> QuizQuestion { get; set; }
     }
 }

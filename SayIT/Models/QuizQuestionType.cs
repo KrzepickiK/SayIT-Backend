@@ -12,6 +12,6 @@ namespace Models
         public string Type { get; set; }
         public string TypeDescription { get; set; }
 
-        public virtual ICollection<QuizQuestion> QuizQuestions { get; set; }
+        public ICollection<QuizQuestion> QuizQuestions { get; set; }
     }
 }

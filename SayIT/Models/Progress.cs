@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Progress :BaseEntity
+    public class Progress
     {
         public int UserId { get; set; }
         public int CategoryId { get; set; }
         public int LearningTypeId { get; set; }
         public int PercentageProgress { get; set; }
  
-        public virtual User User { get; set; }
-        public virtual Category Category { get; set; }
-        public virtual LearningType LearningType { get; set; }
+        public User User { get; set; }
+        public Category Category { get; set; }
+        public LearningType LearningType { get; set; }
     }
 }
