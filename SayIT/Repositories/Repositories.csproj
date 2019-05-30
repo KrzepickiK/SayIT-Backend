@@ -54,18 +54,23 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201905301945453_Initial.cs" />
+    <Compile Include="Migrations\201905301945453_Initial.Designer.cs">
+      <DependentUpon>201905301945453_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SayItContext.cs" />
-    <Compile Include="TranslationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
-      <Project>{2AE90130-94DA-4689-AF6A-1543F540B302}</Project>
-      <Name>Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{6B0DC1DB-CA9E-4367-B395-85980B44E700}</Project>
       <Name>Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905301945453_Initial.resx">
+      <DependentUpon>201905301945453_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
