@@ -31,20 +31,14 @@ namespace SayIT.controllers
     {
         private SayItContext db = new SayItContext();
 
+
         // GET: odata/Translations
         [EnableQuery]
         public IQueryable<Translation> GetTranslations()
         {
-            
 
-            var acc = new AccountType()
-            {
-                Type = "Admin"
-            };
-
-            db.AccountTypes.Add(acc);
-            db.SaveChanges();
             return db.Translations;
+             
         }
 
         // GET: odata/Translations(5)
@@ -92,7 +86,7 @@ namespace SayIT.controllers
         }
 
         // POST: odata/Translations
-        public IHttpActionResult Post(Translation translation)
+        public IHttpActionResult Post([FromBody]Translation translation)
         {
             if (!ModelState.IsValid)
             {

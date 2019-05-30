@@ -141,7 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="controllers\TranslationsController.cs" />
+    <Compile Include="Controllers\TranslationsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -162,7 +162,7 @@
       <Name>Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\Repositories\Repositories.csproj">
-      <Project>{5255CD13-C91B-4CC0-ABEE-62AF77EF1914}</Project>
+      <Project>{5255cd13-c91b-4cc0-abee-62af77ef1914}</Project>
       <Name>Repositories</Name>
     </ProjectReference>
   </ItemGroup>
