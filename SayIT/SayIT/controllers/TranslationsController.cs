@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.ModelBinding;
 using System.Web.Http.OData;
 using System.Web.Http.OData.Routing;
@@ -16,6 +17,7 @@ using Repositories;
 
 namespace SayIT.controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class TranslationsController : ODataController
     {
         private SayItContext db = new SayItContext();
