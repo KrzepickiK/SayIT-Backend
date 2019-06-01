@@ -24,6 +24,7 @@ namespace SayIT
             builder.EntitySet<Translation>("Translations");
             builder.EntitySet<Category>("Categories");
             builder.EntitySet<QuizQuestion>("QuizQuestions");
+            builder.EntitySet<LearningType>("LearningTypes");
             config.Routes.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
         }
     }
