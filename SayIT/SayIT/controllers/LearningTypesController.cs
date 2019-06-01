@@ -13,32 +13,29 @@ using System.Web.Http.OData.Routing;
 using Models;
 using Repositories;
 
-
-namespace SayIT.controllers
+namespace SayIT.Controllers
 {
-    public class TranslationsController : ODataController
+    
+    public class LearningTypesController : ODataController
     {
         private SayItContext db = new SayItContext();
 
-
-        // GET: odata/Translations
+        // GET: odata/LearningTypes
         [EnableQuery]
-        public IQueryable<Translation> GetTranslations()
+        public IQueryable<LearningType> GetLearningTypes()
         {
-
-            return db.Translations;
-             
+            return db.LearningTypes;
         }
 
-        // GET: odata/Translations(5)
+        // GET: odata/LearningTypes(5)
         [EnableQuery]
-        public SingleResult<Translation> GetTranslation([FromODataUri] int key)
+        public SingleResult<LearningType> GetLearningType([FromODataUri] int key)
         {
-            return SingleResult.Create(db.Translations.Where(translation => translation.Id == key));
+            return SingleResult.Create(db.LearningTypes.Where(learningType => learningType.Id == key));
         }
 
-        // PUT: odata/Translations(5)
-        public IHttpActionResult Put([FromODataUri] int key, Delta<Translation> patch)
+        // PUT: odata/LearningTypes(5)
+        public IHttpActionResult Put([FromODataUri] int key, Delta<LearningType> patch)
         {
             Validate(patch.GetEntity());
 
@@ -47,13 +44,13 @@ namespace SayIT.controllers
                 return BadRequest(ModelState);
             }
 
-            Translation translation = db.Translations.Find(key);
-            if (translation == null)
+            LearningType learningType = db.LearningTypes.Find(key);
+            if (learningType == null)
             {
                 return NotFound();
             }
 
-            patch.Put(translation);
+            patch.Put(learningType);
 
             try
             {
@@ -61,7 +58,7 @@ namespace SayIT.controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TranslationExists(key))
+                if (!LearningTypeExists(key))
                 {
                     return NotFound();
                 }
@@ -71,26 +68,26 @@ namespace SayIT.controllers
                 }
             }
 
-            return Updated(translation);
+            return Updated(learningType);
         }
 
-        // POST: odata/Translations
-        public IHttpActionResult Post([FromBody]Translation translation)
+        // POST: odata/LearningTypes
+        public IHttpActionResult Post(LearningType learningType)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Translations.Add(translation);
+            db.LearningTypes.Add(learningType);
             db.SaveChanges();
 
-            return Created(translation);
+            return Created(learningType);
         }
 
-        // PATCH: odata/Translations(5)
+        // PATCH: odata/LearningTypes(5)
         [AcceptVerbs("PATCH", "MERGE")]
-        public IHttpActionResult Patch([FromODataUri] int key, Delta<Translation> patch)
+        public IHttpActionResult Patch([FromODataUri] int key, Delta<LearningType> patch)
         {
             Validate(patch.GetEntity());
 
@@ -99,13 +96,13 @@ namespace SayIT.controllers
                 return BadRequest(ModelState);
             }
 
-            Translation translation = db.Translations.Find(key);
-            if (translation == null)
+            LearningType learningType = db.LearningTypes.Find(key);
+            if (learningType == null)
             {
                 return NotFound();
             }
 
-            patch.Patch(translation);
+            patch.Patch(learningType);
 
             try
             {
@@ -113,7 +110,7 @@ namespace SayIT.controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TranslationExists(key))
+                if (!LearningTypeExists(key))
                 {
                     return NotFound();
                 }
@@ -123,36 +120,29 @@ namespace SayIT.controllers
                 }
             }
 
-            return Updated(translation);
+            return Updated(learningType);
         }
 
-        // DELETE: odata/Translations(5)
+        // DELETE: odata/LearningTypes(5)
         public IHttpActionResult Delete([FromODataUri] int key)
         {
-            Translation translation = db.Translations.Find(key);
-            if (translation == null)
+            LearningType learningType = db.LearningTypes.Find(key);
+            if (learningType == null)
             {
                 return NotFound();
             }
 
-            db.Translations.Remove(translation);
+            db.LearningTypes.Remove(learningType);
             db.SaveChanges();
 
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // GET: odata/Translations(5)/Category
-        [EnableQuery]
-        public SingleResult<Category> GetCategory([FromODataUri] int key)
-        {
-            return SingleResult.Create(db.Translations.Where(m => m.Id == key).Select(m => m.Category));
-        }
-
-        // GET: odata/Translations(5)/QuizQuestion
+        // GET: odata/LearningTypes(5)/QuizQuestion
         [EnableQuery]
         public IQueryable<QuizQuestion> GetQuizQuestion([FromODataUri] int key)
         {
-            return db.Translations.Where(m => m.Id == key).SelectMany(m => m.QuizQuestion);
+            return db.LearningTypes.Where(m => m.Id == key).SelectMany(m => m.QuizQuestion);
         }
 
         protected override void Dispose(bool disposing)
@@ -164,9 +154,9 @@ namespace SayIT.controllers
             base.Dispose(disposing);
         }
 
-        private bool TranslationExists(int key)
+        private bool LearningTypeExists(int key)
         {
-            return db.Translations.Count(e => e.Id == key) > 0;
+            return db.LearningTypes.Count(e => e.Id == key) > 0;
         }
     }
 }

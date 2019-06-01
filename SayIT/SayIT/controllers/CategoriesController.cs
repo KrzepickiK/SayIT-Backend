@@ -13,32 +13,29 @@ using System.Web.Http.OData.Routing;
 using Models;
 using Repositories;
 
-
-namespace SayIT.controllers
+namespace SayIT.Controllers
 {
-    public class TranslationsController : ODataController
+    
+    public class CategoriesController : ODataController
     {
         private SayItContext db = new SayItContext();
 
-
-        // GET: odata/Translations
+        // GET: odata/Categories
         [EnableQuery]
-        public IQueryable<Translation> GetTranslations()
+        public IQueryable<Category> GetCategories()
         {
-
-            return db.Translations;
-             
+            return db.Categories;
         }
 
-        // GET: odata/Translations(5)
+        // GET: odata/Categories(5)
         [EnableQuery]
-        public SingleResult<Translation> GetTranslation([FromODataUri] int key)
+        public SingleResult<Category> GetCategory([FromODataUri] int key)
         {
-            return SingleResult.Create(db.Translations.Where(translation => translation.Id == key));
+            return SingleResult.Create(db.Categories.Where(category => category.Id == key));
         }
 
-        // PUT: odata/Translations(5)
-        public IHttpActionResult Put([FromODataUri] int key, Delta<Translation> patch)
+        // PUT: odata/Categories(5)
+        public IHttpActionResult Put([FromODataUri] int key, Delta<Category> patch)
         {
             Validate(patch.GetEntity());
 
@@ -47,13 +44,13 @@ namespace SayIT.controllers
                 return BadRequest(ModelState);
             }
 
-            Translation translation = db.Translations.Find(key);
-            if (translation == null)
+            Category category = db.Categories.Find(key);
+            if (category == null)
             {
                 return NotFound();
             }
 
-            patch.Put(translation);
+            patch.Put(category);
 
             try
             {
@@ -61,7 +58,7 @@ namespace SayIT.controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TranslationExists(key))
+                if (!CategoryExists(key))
                 {
                     return NotFound();
                 }
@@ -71,26 +68,26 @@ namespace SayIT.controllers
                 }
             }
 
-            return Updated(translation);
+            return Updated(category);
         }
 
-        // POST: odata/Translations
-        public IHttpActionResult Post([FromBody]Translation translation)
+        // POST: odata/Categories
+        public IHttpActionResult Post(Category category)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Translations.Add(translation);
+            db.Categories.Add(category);
             db.SaveChanges();
 
-            return Created(translation);
+            return Created(category);
         }
 
-        // PATCH: odata/Translations(5)
+        // PATCH: odata/Categories(5)
         [AcceptVerbs("PATCH", "MERGE")]
-        public IHttpActionResult Patch([FromODataUri] int key, Delta<Translation> patch)
+        public IHttpActionResult Patch([FromODataUri] int key, Delta<Category> patch)
         {
             Validate(patch.GetEntity());
 
@@ -99,13 +96,13 @@ namespace SayIT.controllers
                 return BadRequest(ModelState);
             }
 
-            Translation translation = db.Translations.Find(key);
-            if (translation == null)
+            Category category = db.Categories.Find(key);
+            if (category == null)
             {
                 return NotFound();
             }
 
-            patch.Patch(translation);
+            patch.Patch(category);
 
             try
             {
@@ -113,7 +110,7 @@ namespace SayIT.controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TranslationExists(key))
+                if (!CategoryExists(key))
                 {
                     return NotFound();
                 }
@@ -123,36 +120,29 @@ namespace SayIT.controllers
                 }
             }
 
-            return Updated(translation);
+            return Updated(category);
         }
 
-        // DELETE: odata/Translations(5)
+        // DELETE: odata/Categories(5)
         public IHttpActionResult Delete([FromODataUri] int key)
         {
-            Translation translation = db.Translations.Find(key);
-            if (translation == null)
+            Category category = db.Categories.Find(key);
+            if (category == null)
             {
                 return NotFound();
             }
 
-            db.Translations.Remove(translation);
+            db.Categories.Remove(category);
             db.SaveChanges();
 
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // GET: odata/Translations(5)/Category
+        // GET: odata/Categories(5)/Translations
         [EnableQuery]
-        public SingleResult<Category> GetCategory([FromODataUri] int key)
+        public IQueryable<Translation> GetTranslations([FromODataUri] int key)
         {
-            return SingleResult.Create(db.Translations.Where(m => m.Id == key).Select(m => m.Category));
-        }
-
-        // GET: odata/Translations(5)/QuizQuestion
-        [EnableQuery]
-        public IQueryable<QuizQuestion> GetQuizQuestion([FromODataUri] int key)
-        {
-            return db.Translations.Where(m => m.Id == key).SelectMany(m => m.QuizQuestion);
+            return db.Categories.Where(m => m.Id == key).SelectMany(m => m.Translations);
         }
 
         protected override void Dispose(bool disposing)
@@ -164,9 +154,9 @@ namespace SayIT.controllers
             base.Dispose(disposing);
         }
 
-        private bool TranslationExists(int key)
+        private bool CategoryExists(int key)
         {
-            return db.Translations.Count(e => e.Id == key) > 0;
+            return db.Categories.Count(e => e.Id == key) > 0;
         }
     }
 }
