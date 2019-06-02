@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Http;
-using System.Web.Http.OData.Builder;
-using System.Web.Http.OData.Extensions;
+using Microsoft.OData.Edm;
+using System.Web.OData;
+using System.Web.OData.Builder;
+using System.Web.OData.Extensions;
+using System.Web.OData.Routing;
 using Models;
+using System.Web.Http;
+using System.Web.Http.OData.Extensions;
 
 namespace SayIT
 {
@@ -22,11 +26,12 @@ namespace SayIT
             );
 
             ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
+            builder.EnableLowerCamelCase();
             builder.EntitySet<Translation>("Translations");
             builder.EntitySet<Category>("Categories");
             builder.EntitySet<QuizQuestion>("QuizQuestions");
             builder.EntitySet<LearningType>("LearningTypes");
-            config.Routes.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
+            config.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
         }
     }
 }

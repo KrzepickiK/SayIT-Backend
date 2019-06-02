@@ -9,8 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.ModelBinding;
-using System.Web.Http.OData;
-using System.Web.Http.OData.Routing;
+using System.Web.OData;
 using Models;
 using Repositories;
 
@@ -42,7 +41,7 @@ namespace SayIT.controllers
         // PUT: odata/Translations(5)
         public IHttpActionResult Put([FromODataUri] int key, Delta<Translation> patch)
         {
-            Validate(patch.GetEntity());
+            Validate(patch.GetInstance());
 
             if (!ModelState.IsValid)
             {
@@ -94,7 +93,7 @@ namespace SayIT.controllers
         [AcceptVerbs("PATCH", "MERGE")]
         public IHttpActionResult Patch([FromODataUri] int key, Delta<Translation> patch)
         {
-            Validate(patch.GetEntity());
+            Validate(patch.GetInstance());
 
             if (!ModelState.IsValid)
             {
