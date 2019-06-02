@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201905301945453_Initial.Designer.cs">
       <DependentUpon>201905301945453_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906020948054_Category model change.cs" />
+    <Compile Include="Migrations\201906020948054_Category model change.Designer.cs">
+      <DependentUpon>201906020948054_Category model change.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SayItContext.cs" />
   </ItemGroup>
@@ -70,6 +74,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201905301945453_Initial.resx">
       <DependentUpon>201905301945453_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906020948054_Category model change.resx">
+      <DependentUpon>201906020948054_Category model change.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
