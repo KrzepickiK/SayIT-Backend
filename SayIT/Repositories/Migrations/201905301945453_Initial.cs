@@ -1,4 +1,4 @@
-namespace Repositories.Migrations
+﻿namespace Repositories.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

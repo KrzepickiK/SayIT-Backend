@@ -13,7 +13,7 @@ namespace Repositories.Migrations
         public override void Down()
         {
             RenameColumn("dbo.Categories", "Name", "CategoryName");
-
+            
         }
     }
 }
