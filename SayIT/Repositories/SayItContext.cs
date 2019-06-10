@@ -11,7 +11,7 @@ namespace Repositories
    public class SayItContext : DbContext
     {
         //base("sorky1_dictionaryEntities4")
-        public SayItContext(): base()
+        public SayItContext(): base("sorky1_dictionaryEntities4")
         {
         
         }
