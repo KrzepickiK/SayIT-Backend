@@ -58,11 +58,12 @@ namespace SayIt_Accounts
             //   appId: "",
             //   appSecret: "");
 
-           app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+         /*  app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
               ClientId = " 73601085611-1avif1e1lks246fdprjih66shcih94vt.apps.googleusercontent.com ",
                 ClientSecret = "q-sXrnpt18y_AEHiOaX9bNBk "
            });
+           */
         }
     }
 }
