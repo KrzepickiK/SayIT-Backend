@@ -14,6 +14,7 @@ namespace SayIt_Accounts
         // Aby uzyskać więcej informacji o konfigurowaniu uwierzytelniania, odwiedź stronę https://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
+
             // Skonfiguruj kontekst bazy danych, menedżera użytkowników i menedżera logowania, aby używać jednego wystąpienia na żądanie
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
@@ -58,12 +59,13 @@ namespace SayIt_Accounts
             //   appId: "",
             //   appSecret: "");
 
-         /*  app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-              ClientId = " 73601085611-1avif1e1lks246fdprjih66shcih94vt.apps.googleusercontent.com ",
-                ClientSecret = "q-sXrnpt18y_AEHiOaX9bNBk "
-           });
-           */
+                ClientId = "766411463319-po4gv9tnm97oqgni18ieig5rfbmippo0.apps.googleusercontent.com",
+                ClientSecret = "LyebnL3nrS2WeBDCx_SxFSeG"
+            });
+
+              
         }
     }
 }
