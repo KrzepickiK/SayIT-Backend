@@ -10,6 +10,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{5255CD13-C91B-4CC0-ABEE-62AF77EF1914}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SayIt Accounts", "SayIt Accounts\SayIt Accounts.csproj", "{B8B3199F-5A38-4D96-9261-87F025D3EC87}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5255CD13-C91B-4CC0-ABEE-62AF77EF1914} = {5255CD13-C91B-4CC0-ABEE-62AF77EF1914}
+		{6B0DC1DB-CA9E-4367-B395-85980B44E700} = {6B0DC1DB-CA9E-4367-B395-85980B44E700}
+		{B3DE80DD-6432-4CA7-8F82-10D540FAE1EB} = {B3DE80DD-6432-4CA7-8F82-10D540FAE1EB}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

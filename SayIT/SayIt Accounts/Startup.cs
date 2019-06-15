@@ -1,6 +1,7 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
+
 [assembly: OwinStartupAttribute(typeof(SayIt_Accounts.Startup))]
 namespace SayIt_Accounts
 {
@@ -9,6 +10,7 @@ namespace SayIt_Accounts
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            
         }
     }
 }
