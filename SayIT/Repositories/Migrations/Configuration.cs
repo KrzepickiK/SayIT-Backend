@@ -32,7 +32,7 @@
 
 
             IList<Category> StartingCategories = new List<Category>();
-            StartingCategories.Add(new Category { Id = 1, Name = "Sprzêt", MaterialIconName = "memory" });
+            StartingCategories.Add(new Category { Id = 1, Name = "Sprz�t", MaterialIconName = "memory" });
             StartingCategories.Add(new Category { Id = 2, Name = "Programowanie", MaterialIconName = "code" });
             StartingCategories.Add(new Category { Id = 3, Name = "Rozmowa kwalifikacyjna", MaterialIconName = "business" });
             StartingCategories.Add(new Category { Id = 4, Name = "Inne", MaterialIconName = "local_pizza" });
@@ -41,9 +41,9 @@
 
 
             IList<LearningType> StartingLearningTypes = new List<LearningType>();
-            StartingLearningTypes.Add(new LearningType() { Id = 1, Name = "Flashcard", Description = "Naucz siê s³ówek dziêki fiszkom" });
-            StartingLearningTypes.Add(new LearningType() { Id = 2, Name = "Quiz", Description = "Wybierz poprawne t³umaczenie z dostêpnych opcji" });
-            StartingLearningTypes.Add(new LearningType() { Id = 3, Name = "Matching Words", Description = "Wpisz s³owo pasuj¹ce do definicji" });
+            StartingLearningTypes.Add(new LearningType() { Id = 1, Name = "Flashcard", Description = "Naucz si� s��wek dzi�ki fiszkom" });
+            StartingLearningTypes.Add(new LearningType() { Id = 2, Name = "Quiz", Description = "Wybierz poprawne t�umaczenie z dost�pnych opcji" });
+            StartingLearningTypes.Add(new LearningType() { Id = 3, Name = "Matching Words", Description = "Wpisz s�owo pasuj�ce do definicji" });
 
             context.LearningTypes.AddRange(StartingLearningTypes);
 
@@ -56,7 +56,7 @@
                 TranslationEN = "Mouse",
                 TranslationPL = "Mysz",
                 MeaningEN = "Device with allows you to move the cursor inside of the system",
-                MeaningPL = "Urz¹dzenie które pozwala poruszaæ kursorem wewn¹trz systemu",
+                MeaningPL = "Urz�dzenie kt�re pozwala porusza� kursorem wewn�trz systemu",
             });
             StartingTranslations.Add(new Translation()
             {
@@ -65,7 +65,7 @@
                 TranslationEN = "Keyboard",
                 TranslationPL = "Klawiatura",
                 MeaningEN = "Device with allows you to type letters or characters into the system",
-                MeaningPL = "Urz¹dzenie które pozwala wprowadzaæ litery lub inne znaki do systemu",
+                MeaningPL = "Urz�dzenie kt�re pozwala wprowadza� litery lub inne znaki do systemu",
             });
 
             StartingTranslations.Add(new Translation()
@@ -75,7 +75,7 @@
                 TranslationEN = "Method",
                 TranslationPL = "Metoda",
                 MeaningEN = "A function that can be called on an object of a given class and can return some data or just do a task",
-                MeaningPL = "Funkcja która mo¿e zostaæ wywo³ana poprzez instancje klasy zwracaj¹ca dane lub wykonuj¹ca dzia³ania",
+                MeaningPL = "Funkcja kt�ra mo�e zosta� wywo�ana poprzez instancje klasy zwracaj�ca dane lub wykonuj�ca dzia�ania",
             });
             StartingTranslations.Add(new Translation()
             {
@@ -84,16 +84,16 @@
                 TranslationEN = "Compiler",
                 TranslationPL = "Kompilator",
                 MeaningEN = "A program that converts another program from some source language (or programming language) to machine language (object code)",
-                MeaningPL = "Program s³u¿¹cy do automatycznego t³umaczenia kodu napisanego w jednym jêzyku (jêzyku Ÿród³owym) na równowa¿ny kod w innym jêzyku (jêzyku wynikowym)",
+                MeaningPL = "Program s�u��cy do automatycznego t�umaczenia kodu napisanego w jednym j�zyku (j�zyku �r�d�owym) na r�wnowa�ny kod w innym j�zyku (j�zyku wynikowym)",
             });
             StartingTranslations.Add(new Translation()
             {
                 Id = 5,
                 CategoryId = 3,
                 TranslationEN = "Experience",
-                TranslationPL = "Doœwiadczenie",
+                TranslationPL = "Do�wiadczenie",
                 MeaningEN = "The process of getting knowledge or skill from doing things",
-                MeaningPL = "Proces podczas którego zwiêszamy swoj¹ wiedzê lub umiejêtnoœci dotycz¹ce dzia³ania",
+                MeaningPL = "Proces podczas kt�rego zwi�szamy swoj� wiedz� lub umiej�tno�ci dotycz�ce dzia�ania",
             });
             StartingTranslations.Add(new Translation()
             {
@@ -102,7 +102,7 @@
                 TranslationEN = "Personal info",
                 TranslationPL = "Dane osobowe",
                 MeaningEN = "Informations with allow you to identify a person (like name, address...)",
-                MeaningPL = "Informacje które pozwalaj¹ zidentyfikowaæ osobê (jak imiê, adres...)",
+                MeaningPL = "Informacje kt�re pozwalaj� zidentyfikowa� osob� (jak imi�, adres...)",
             });
             StartingTranslations.Add(new Translation()
             {
@@ -111,7 +111,7 @@
                 TranslationEN = "Pizza",
                 TranslationPL = "Pizza",
                 MeaningEN = "Food with is needed by software developers to write code",
-                MeaningPL = "Jedzenie które jest potrzebne programistom do pisania kodu",
+                MeaningPL = "Jedzenie kt�re jest potrzebne programistom do pisania kodu",
             });
             StartingTranslations.Add(new Translation()
             {
@@ -120,7 +120,7 @@
                 TranslationEN = "Coffee",
                 TranslationPL = "Kawa",
                 MeaningEN = "Drink with is needed by software developers to write code",
-                MeaningPL = "Napój który jest potrzebny programistom do pisania kodu",
+                MeaningPL = "Nap�j kt�ry jest potrzebny programistom do pisania kodu",
             });
 
             context.Translations.AddRange(StartingTranslations);

@@ -26,6 +26,7 @@ namespace SayIT
             );
 
             ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
+            config.Count().Filter().OrderBy().Expand().Select().MaxTop(null);
             builder.EnableLowerCamelCase();
             builder.EntitySet<Translation>("Translations");
             builder.EntitySet<Category>("Categories");
