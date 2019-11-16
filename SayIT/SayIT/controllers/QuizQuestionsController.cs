@@ -18,7 +18,7 @@ namespace SayIT.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class QuizQuestionsController : ODataController
     {
-        private SayItContext db = new SayItContext();
+        private readonly SayItContext db = new SayItContext();
 
         // GET: odata/QuizQuestions
         [EnableQuery]

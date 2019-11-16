@@ -8,33 +8,6 @@
         public override void Up()
         {
             CreateTable(
-                "dbo.AccountTypes",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Type = c.String(),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.Users",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Login = c.String(),
-                        Password = c.String(),
-                        Email = c.String(),
-                        Name = c.String(),
-                        Surname = c.String(),
-                        AvatarUrl = c.String(),
-                        AccountTypeId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AccountTypes", t => t.AccountTypeId, cascadeDelete: true)
-                .Index(t => t.Id, unique: true)
-                .Index(t => t.AccountTypeId);
-            
-            CreateTable(
                 "dbo.Categories",
                 c => new
                     {

@@ -24,10 +24,10 @@ namespace SayIt_Accounts
             // Dołącz tutaj usługę poczty e-mail, aby wysłać wiadomość e-mail.
             return Task.Factory.StartNew(() =>
             {
-                sendMail(message);
+                SendMail(message);
             });
         }
-        void sendMail(IdentityMessage message)
+        void SendMail(IdentityMessage message)
         {
             #region formatter
             string text = string.Format("Please click on this link to {0}: {1}", message.Subject, message.Body);
@@ -36,8 +36,10 @@ namespace SayIt_Accounts
             html += HttpUtility.HtmlEncode(@"Or click on the copy the following link on the browser:" + message.Body);
             #endregion
 
-            MailMessage msg = new MailMessage();
-            msg.From = new MailAddress(ConfigurationManager.AppSettings["Email"].ToString());
+            MailMessage msg = new MailMessage
+            {
+                From = new MailAddress(ConfigurationManager.AppSettings["Email"].ToString())
+            };
             msg.To.Add(new MailAddress(message.Destination));
             msg.Subject = message.Subject;
             msg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Plain));
@@ -81,7 +83,7 @@ namespace SayIt_Accounts
             // Konfiguruj logikę weryfikacji haseł
             manager.PasswordValidator = new PasswordValidator
             {
-                RequiredLength = 6,
+                RequiredLength = 8,
                 RequireNonLetterOrDigit = true,
                 RequireDigit = true,
                 RequireLowercase = true,

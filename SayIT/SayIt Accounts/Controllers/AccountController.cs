@@ -275,8 +275,7 @@ namespace SayIt_Accounts.Controllers
         // POST: /Account/ExternalLogin
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public ActionResult ExternalLogin(string provider, string returnUrl)
+               public ActionResult ExternalLogin(string provider, string returnUrl)
         {
             // Żądaj przekierowania do dostawcy logowania zewnętrznego
             return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));

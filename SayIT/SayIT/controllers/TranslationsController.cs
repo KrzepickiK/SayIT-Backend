@@ -19,7 +19,7 @@ namespace SayIT.controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class TranslationsController : ODataController
     {
-        private SayItContext db = new SayItContext();
+        private readonly SayItContext db = new SayItContext();
 
 
         // GET: odata/Translations
