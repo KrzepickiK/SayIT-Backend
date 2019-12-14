@@ -71,6 +71,10 @@
     <Compile Include="Migrations\201906020948054_Category model change.Designer.cs">
       <DependentUpon>201906020948054_Category model change.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912141136555_accounts_refactor.cs" />
+    <Compile Include="Migrations\201912141136555_accounts_refactor.Designer.cs">
+      <DependentUpon>201912141136555_accounts_refactor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SayItContext.cs" />
   </ItemGroup>
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906020948054_Category model change.resx">
       <DependentUpon>201906020948054_Category model change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912141136555_accounts_refactor.resx">
+      <DependentUpon>201912141136555_accounts_refactor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
